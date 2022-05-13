@@ -11,6 +11,7 @@ GET fligths/_search
 	    "cardinality": {
 		  "field": "DestCityName"
 	
-	}
+	}  
   }
 }
+
