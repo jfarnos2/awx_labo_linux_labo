@@ -15,6 +15,7 @@
       file:
         path: /var/www/html/index.html
         state: touch
+        # state: absent
     - name: add something
       copy:
         content: "Alls well that ends well"
