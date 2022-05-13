@@ -1,0 +1,24 @@
+---
+- hosts: "{{ hosts }}"
+  become: true
+  tasks:
+    - name: create users
+      user:
+        name: "{{ item }}"
+        shell: "/bin/bash"
+        comment: "user added by ANSIBLE"
+        state: present
+      with_items:
+        - oracle  
+    - name: copy files
+      copy:
+        src: "/var/tmp/{{ item }}"
+        dest: "/var/tmp/{{ item }}"
+        owner: oracle
+        group: oracle
+        mode: '0600'
+        remote_src: no
+      with_items:
+        - file1.txt
+        - file2.txt
+        - file3.txt
