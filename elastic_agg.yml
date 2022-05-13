@@ -12,6 +12,6 @@ GET fligths/_search
 		  "field": "DestCityName"
 	
 	}  
-  }
+  } 
 }
 
